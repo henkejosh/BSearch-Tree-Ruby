@@ -176,9 +176,33 @@ describe BinarySearchTree do
       end
 
       it 'returns an ordered array of values in the tree' do
-        values = [1,2,3,8,9,7]
+        values = [1,2,3,8,9]
         values.each { |n| BinarySearchTree.insert!(node, n) }
         expect(BinarySearchTree.inorder!(node)).to eq([1,2,3,7,8,9])
+      end
+    end
+
+    describe '::preorder!' do
+      it 'returns an empty array if there are no nodes' do
+        expect(BinarySearchTree.preorder!(nil)).to be_empty
+      end
+
+      it 'returns an array of values ordered left first from the tree' do
+        values = [1,2,3,8,9]
+        values.each { |n| BinarySearchTree.insert!(node, n) }
+        expect(BinarySearchTree.preorder!(node)).to eq([7, 1, 2, 3, 8,9])
+      end
+    end
+
+    describe '::postorder!' do
+      it 'returns an empty array if there are no nodes' do
+        expect(BinarySearchTree.postorder!(nil)).to be_empty
+      end
+
+      it 'returns an array of values ordered right first from the tree' do
+        values = [1,2,3,8,9]
+        values.each { |n| BinarySearchTree.insert!(node, n) }
+        expect(BinarySearchTree.postorder!(node)).to eq([3,2,1,9,8,7])
       end
     end
   end
