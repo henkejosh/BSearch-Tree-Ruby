@@ -176,7 +176,7 @@ describe BinarySearchTree do
       end
 
       it 'returns an ordered array of values in the tree' do
-        values = [1,2,3,8,9]
+        values = [1,2,3,8,9,7]
         values.each { |n| BinarySearchTree.insert!(node, n) }
         expect(BinarySearchTree.inorder!(node)).to eq([1,2,3,7,8,9])
       end
