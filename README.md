@@ -22,7 +22,7 @@
   2. Data is inserted in descending sorted order
   3. Data is inserted in alternating order from the outside in
 
-  ```
+```
 0                                  3          0
 
    \                              /              \
@@ -38,4 +38,3 @@
              3          0                          2
 ```
 ###HOW?
-asd
